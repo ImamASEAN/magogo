@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Instagram as InstagramIcon, Heart, MessageCircle, ExternalLink } from 'lucide-react'
+import { Instagram, Heart, MessageCircle, ExternalLink } from 'lucide-react'
 
 const posts = [
   {
@@ -79,7 +79,7 @@ export default function Instagram() {
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6"
             >
-              <InstagramIcon size={14} style={{ color: 'var(--color-emerald)' }} />
+              <Instagram size={14} style={{ color: 'var(--color-emerald)' }} />
               <span
                 className="text-xs font-semibold tracking-widest uppercase"
                 style={{ color: 'var(--color-emerald)', fontFamily: 'Space Mono, monospace' }}
@@ -104,7 +104,7 @@ export default function Instagram() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            href="https://instagram.com/magogo.io "
+            href="https://instagram.com/magogo.io"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105"
@@ -114,7 +114,7 @@ export default function Instagram() {
               fontFamily: 'Space Grotesk, sans-serif',
             }}
           >
-            <InstagramIcon size={16} />
+            <Instagram size={16} />
             @magogo.io
             <ExternalLink size={14} />
           </motion.a>
@@ -148,7 +148,7 @@ export default function Instagram() {
                   >
                     {post.tag}
                   </span>
-                  <InstagramIcon size={14} className="text-white/40" />
+                  <Instagram size={14} className="text-white/40" />
                 </div>
 
                 {/* Decorative center element */}
@@ -196,7 +196,7 @@ export default function Instagram() {
                 style={{ background: 'rgba(26,58,42,0.6)', backdropFilter: 'blur(4px)' }}
               >
                 <div className="text-center">
-                  <InstagramIcon size={28} className="text-white mx-auto mb-2" />
+                  <Instagram size={28} className="text-white mx-auto mb-2" />
                   <span className="text-white text-sm font-semibold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
                     View Post
                   </span>
@@ -217,7 +217,7 @@ export default function Instagram() {
             Join thousands following our climate tech journey
           </p>
           <a
-            href="https://instagram.com/magogo.io "
+            href="https://instagram.com/magogo.io"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 glass"
@@ -227,7 +227,7 @@ export default function Instagram() {
               fontFamily: 'Space Grotesk, sans-serif',
             }}
           >
-            <InstagramIcon size={16} style={{ color: 'var(--color-emerald)' }} />
+            <Instagram size={16} style={{ color: 'var(--color-emerald)' }} />
             Follow @magogo.io on Instagram
           </a>
         </motion.div>

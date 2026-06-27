@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const links = [
-  { label: 'Teknologi', href: '#product' },
+  { label: 'Technology', href: '#product' },
   { label: 'Dashboard', href: '#dashboard' },
-  { label: 'Cara Kerja', href: '#how-it-works' },
-  { label: 'Harga', href: '#pricing' },
-  { label: 'Kontak', href: '#contact' },
+  { label: 'How It Works', href: '#how-it-works' },
+  { label: 'Pricing', href: '#pricing' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export default function Navbar() {
@@ -74,7 +74,7 @@ export default function Navbar() {
               fontFamily: 'Space Grotesk, sans-serif',
             }}
           >
-            Mulai Sekarang
+            Get Started
           </a>
         </div>
 
@@ -114,7 +114,7 @@ export default function Navbar() {
                 style={{ background: 'var(--color-forest)', color: 'var(--color-lime)' }}
                 onClick={() => setOpen(false)}
               >
-                Mulai Sekarang
+                Get Started
               </a>
             </div>
           </motion.div>

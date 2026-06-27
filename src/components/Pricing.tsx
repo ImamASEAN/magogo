@@ -187,7 +187,7 @@ export default function Pricing() {
               Expert Upgrade
             </h3>
             <p className="text-sm mb-6" style={{ color: 'rgba(26,58,42,0.6)' }}>
-              Analitik canggih dan pemantauan multi-unit tak terbatas untuk operator serius.
+              Advanced analytics and unlimited multi-unit monitoring for serious operators.
             </p>
 
             {/* Price */}
@@ -199,7 +199,7 @@ export default function Pricing() {
               >
                 200.000
               </span>
-              <span className="text-forest/40 text-sm mb-2">/ bulan</span>
+              <span className="text-forest/40 text-sm mb-2">/ month</span>
             </div>
 
             {/* Features */}
@@ -236,11 +236,11 @@ export default function Pricing() {
           className="text-center mt-8 p-5 rounded-2xl glass"
         >
           <p className="text-sm" style={{ color: 'rgba(26,58,42,0.6)' }}>
-            Beli Smart Chamber + Expert Upgrade bulan pertama hanya{' '}
+            Beli Smart Chamber + Expert Upgrade month pertama hanya{' '}
             <span className="font-bold" style={{ color: 'var(--color-forest)' }}>Rp 1.900.000</span>
             {' '}•{' '}
             <a href="#contact" className="underline" style={{ color: 'var(--color-emerald)' }}>
-              Hubungi kami untuk harga volume / korporat
+              Contact us for volume / enterprise pricing
             </a>
           </p>
         </motion.div>
