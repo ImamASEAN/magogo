@@ -27,24 +27,24 @@ export default function WasteCounter() {
     return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current) }
   }, [inView])
 
-  const formatted = count.toLocaleString()
+  const formatted = count.toLocaleString('id-ID')
 
   const stats = [
-    { icon: Globe, label: 'Billion tonnes', value: '2.01', sub: 'organic waste per year globally' },
-    { icon: Clock, label: 'Kg per second', value: '63,700', sub: 'generated right now worldwide' },
-    { icon: TrendingUp, label: 'Of food wasted', value: '30%', sub: 'of all food produced globally' },
+    { icon: Globe, label: 'Miliar Ton / Tahun', value: '2,01 Gt', sub: 'sampah organik dihasilkan per tahun di seluruh dunia' },
+    { icon: Clock, label: 'Kilogram Per Detik', value: '63.700 kg/s', sub: 'sampah organik dihasilkan saat ini secara global' },
+    { icon: TrendingUp, label: 'Makanan Terbuang', value: '30%', sub: 'dari seluruh produksi pangan global terbuang sia-sia' },
   ]
 
   return (
     <section
       ref={ref}
       className="relative py-32 overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #f4f6f2 0%, #1a3a2a 40%, #1a3a2a 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #f4f6f2 0%, #1a3a2a 30%, #1a3a2a 80%, #f4f6f2 100%)' }}
     >
       {/* Top fade */}
       <div
-        className="absolute top-0 left-0 right-0 h-32 pointer-events-none"
-        style={{ background: 'linear-gradient(to bottom, #f4f6f2, transparent)' }}
+        className="absolute top-0 left-0 right-0 h-48 pointer-events-none"
+        style={{ background: 'linear-gradient(to bottom, #f4f6f2 0%, rgba(244,246,242,0.8) 40%, transparent 100%)' }}
       />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
@@ -64,7 +64,7 @@ export default function WasteCounter() {
             className="text-xs font-semibold tracking-widest uppercase"
             style={{ color: 'var(--color-lime)', fontFamily: 'Space Mono, monospace' }}
           >
-            The Global Crisis
+            Krisis Global
           </span>
         </motion.div>
 
@@ -76,9 +76,9 @@ export default function WasteCounter() {
           className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight"
           style={{ fontFamily: 'Space Grotesk, sans-serif' }}
         >
-          Organic waste keeps growing
+          Sampah organik terus bertambah
           <br />
-          <span style={{ color: 'var(--color-lime)' }}>every second.</span>
+          <span style={{ color: 'var(--color-lime)' }}>setiap detik.</span>
         </motion.h2>
 
         <motion.p
@@ -88,7 +88,7 @@ export default function WasteCounter() {
           transition={{ delay: 0.2 }}
           className="text-white/60 text-lg mb-16 max-w-xl mx-auto"
         >
-          While you read this, millions of kilograms of organic waste pile up with nowhere to go.
+          Saat kamu membaca ini, jutaan kilogram sampah organik terus menumpuk tanpa solusi yang jelas.
         </motion.p>
 
         {/* Counter */}
@@ -104,7 +104,6 @@ export default function WasteCounter() {
             backdropFilter: 'blur(20px)',
           }}
         >
-          {/* Warning glow */}
           <div
             className="absolute inset-0 rounded-3xl pointer-events-none"
             style={{
@@ -113,7 +112,7 @@ export default function WasteCounter() {
           />
 
           <p className="text-white/50 text-sm mb-3 tracking-widest uppercase font-mono">
-            Estimated organic waste generated while you are here
+            Estimasi sampah organik yang dihasilkan selama kamu di sini
           </p>
 
           <div
@@ -140,7 +139,7 @@ export default function WasteCounter() {
           </div>
 
           <p className="text-white/30 text-xs mt-4 font-mono">
-            ⚠ Based on estimated global organic waste generation rate (~63,700 kg/s)
+            ⚠ Berdasarkan estimasi laju produksi sampah organik global (~63.700 kg/detik)
           </p>
         </motion.div>
 
@@ -188,7 +187,7 @@ export default function WasteCounter() {
             style={{ background: 'var(--color-lime)' }}
           />
           <span className="text-white font-medium">
-            MagoGo turns this problem into a resource.
+            MagoGo mengubah masalah ini menjadi sumber daya.
           </span>
           <span style={{ color: 'var(--color-lime)' }}>→</span>
         </motion.div>
@@ -196,8 +195,8 @@ export default function WasteCounter() {
 
       {/* Bottom fade */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-        style={{ background: 'linear-gradient(to top, #f4f6f2, transparent)' }}
+        className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
+        style={{ background: 'linear-gradient(to top, #f4f6f2 0%, rgba(244,246,242,0.8) 40%, transparent 100%)' }}
       />
     </section>
   )

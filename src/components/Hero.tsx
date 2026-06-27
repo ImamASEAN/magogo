@@ -6,7 +6,7 @@ import { ArrowRight, ChevronDown, Thermometer, Droplets, Activity, Weight } from
 const floatingCards = [
   {
     icon: Thermometer,
-    label: 'Temperature',
+    label: 'Suhu',
     value: '24.5°C',
     status: 'Optimal',
     color: '#f97316',
@@ -15,16 +15,16 @@ const floatingCards = [
   },
   {
     icon: Droplets,
-    label: 'Humidity',
+    label: 'Kelembaban',
     value: '72%',
-    status: 'Good',
+    status: 'Baik',
     color: '#3b82f6',
     delay: 0.2,
     className: 'top-[38%] right-[0%] md:right-[2%]',
   },
   {
     icon: Activity,
-    label: 'System Status',
+    label: 'Status Sistem',
     value: 'Optimal ✓',
     status: 'Live',
     color: '#a8ff3e',
@@ -33,9 +33,9 @@ const floatingCards = [
   },
   {
     icon: Weight,
-    label: 'Biomass',
+    label: 'Biomassa',
     value: '850g',
-    status: '+12% today',
+    status: '+12% hari ini',
     color: '#2d7a4f',
     delay: 0.6,
     className: 'bottom-[10%] right-[8%] md:right-[12%]',
@@ -82,11 +82,26 @@ export default function Hero() {
 
           {/* LEFT — Copy */}
           <div>
-            {/* Badge */}
+            {/* Logo banner */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
+              className="mb-6"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo-banner.png"
+                alt="MagoGo Smart Chamber"
+                className="h-12 w-auto"
+              />
+            </motion.div>
+
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.05 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
             >
               <span
@@ -94,7 +109,7 @@ export default function Hero() {
                 style={{ background: 'var(--color-lime)' }}
               />
               <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: 'var(--color-emerald)', fontFamily: 'Space Mono, monospace' }}>
-                IoT · Circular Economy · Climate Tech
+                IoT · Ekonomi Sirkular · Iklim
               </span>
             </motion.div>
 
@@ -106,12 +121,12 @@ export default function Hero() {
               style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-forest)' }}
               className="text-5xl md:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight mb-6"
             >
-              Transform Organic
+              Ubah Sampah
               <br />
-              <span style={{ color: 'var(--color-emerald-light)' }}>Waste</span> Into
+              <span style={{ color: 'var(--color-emerald-light)' }}>Organik</span> Jadi
               <br />
               <span className="relative">
-                Smart Growth
+                Nilai Nyata
                 <motion.span
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
@@ -130,7 +145,7 @@ export default function Hero() {
               className="text-lg md:text-xl leading-relaxed mb-10 max-w-lg"
               style={{ color: 'rgba(26,58,42,0.65)' }}
             >
-              An IoT-powered smart chamber that converts organic waste into valuable biomass through intelligent monitoring and automation.
+              Smart chamber bertenaga IoT yang mengubah sampah organik menjadi biomassa bernilai tinggi melalui pemantauan cerdas dan otomasi penuh.
             </motion.p>
 
             {/* Buttons */}
@@ -150,7 +165,7 @@ export default function Hero() {
                   boxShadow: '0 4px 24px rgba(26,58,42,0.25)',
                 }}
               >
-                Explore Technology
+                Jelajahi Teknologi
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </a>
               <a
@@ -162,7 +177,7 @@ export default function Hero() {
                   border: '1.5px solid rgba(45,122,79,0.3)',
                 }}
               >
-                Contact Us
+                Hubungi Kami
               </a>
             </motion.div>
 
@@ -175,9 +190,9 @@ export default function Hero() {
               style={{ borderTop: '1px solid rgba(45,122,79,0.15)' }}
             >
               {[
-                { val: '4 in 1', label: 'Smart Sensors' },
-                { val: 'Real-time', label: 'ML Analytics' },
-                { val: '100%', label: 'Automated' },
+                { val: '4 in 1', label: 'Sensor Cerdas' },
+                { val: 'Real-time', label: 'Analitik ML' },
+                { val: '100%', label: 'Otomatis' },
               ].map(s => (
                 <div key={s.label}>
                   <div
@@ -194,81 +209,30 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* RIGHT — Product showcase */}
+          {/* RIGHT — Real product image */}
           <div className="relative flex justify-center items-center h-[500px] md:h-[600px]">
-            {/* Central product visual */}
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.0, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="animate-float relative"
             >
-              {/* Main product container */}
+              {/* Glow behind product */}
               <div
-                className="relative w-64 h-80 md:w-80 md:h-96 rounded-3xl overflow-hidden"
-                style={{
-                  background: 'linear-gradient(145deg, rgba(26,58,42,0.9) 0%, rgba(45,122,79,0.8) 100%)',
-                  border: '1px solid rgba(168,255,62,0.3)',
-                  boxShadow: '0 40px 80px rgba(26,58,42,0.35), 0 0 60px rgba(168,255,62,0.15), inset 0 1px 0 rgba(255,255,255,0.1)',
-                }}
-              >
-                {/* Device screen sim */}
-                <div className="absolute inset-4 rounded-2xl overflow-hidden"
-                  style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(168,255,62,0.15)' }}>
-                  {/* Animated bars */}
-                  <div className="p-4">
-                    <div className="text-xs font-mono mb-3" style={{ color: 'var(--color-lime)', opacity: 0.8 }}>
-                      SMART CHAMBER #01
-                    </div>
-                    {[
-                      { label: 'TEMP', val: 75, unit: '24.5°C', color: '#f97316' },
-                      { label: 'HUM', val: 72, unit: '72%', color: '#3b82f6' },
-                      { label: 'PH', val: 60, unit: '6.2 pH', color: '#a855f7' },
-                      { label: 'MASS', val: 85, unit: '850g', color: '#a8ff3e' },
-                    ].map((bar, i) => (
-                      <motion.div
-                        key={bar.label}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.8 + i * 0.15 }}
-                        className="mb-3"
-                      >
-                        <div className="flex justify-between text-xs mb-1">
-                          <span style={{ color: 'rgba(255,255,255,0.5)', fontFamily: 'Space Mono, monospace' }}>{bar.label}</span>
-                          <span style={{ color: bar.color, fontFamily: 'Space Mono, monospace' }}>{bar.unit}</span>
-                        </div>
-                        <div className="h-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.1)' }}>
-                          <motion.div
-                            initial={{ width: 0 }}
-                            animate={{ width: `${bar.val}%` }}
-                            transition={{ delay: 1 + i * 0.15, duration: 1, ease: 'easeOut' }}
-                            className="h-full rounded-full"
-                            style={{ background: bar.color }}
-                          />
-                        </div>
-                      </motion.div>
-                    ))}
-
-                    {/* Status indicator */}
-                    <div className="mt-6 flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: 'var(--color-lime)' }} />
-                      <span className="text-xs font-mono" style={{ color: 'var(--color-lime)' }}>
-                        SYSTEM OPTIMAL
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Device decorations */}
-                <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
-                  <div className="w-16 h-1 rounded-full" style={{ background: 'rgba(168,255,62,0.4)' }} />
-                </div>
-              </div>
-
+                className="absolute inset-0 rounded-3xl blur-3xl scale-90 translate-y-8"
+                style={{ background: 'radial-gradient(ellipse, rgba(168,255,62,0.3) 0%, rgba(45,122,79,0.2) 60%, transparent 100%)' }}
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/product-single.png"
+                alt="MagoGo Smart Chamber"
+                className="relative z-10 w-72 md:w-[420px] object-contain"
+                style={{ filter: 'drop-shadow(0 24px 48px rgba(26,58,42,0.35))' }}
+              />
               {/* Glow under product */}
               <div
-                className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-48 h-12 rounded-full blur-2xl"
-                style={{ background: 'rgba(168,255,62,0.25)' }}
+                className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-56 h-10 rounded-full blur-2xl"
+                style={{ background: 'rgba(168,255,62,0.3)' }}
               />
             </motion.div>
 

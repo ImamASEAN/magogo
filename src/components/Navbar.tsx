@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const links = [
-  { label: 'Technology', href: '#product' },
+  { label: 'Teknologi', href: '#product' },
   { label: 'Dashboard', href: '#dashboard' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Cara Kerja', href: '#how-it-works' },
+  { label: 'Harga', href: '#pricing' },
+  { label: 'Kontak', href: '#contact' },
 ]
 
 export default function Navbar() {
@@ -35,12 +35,15 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-600 to-lime-400 flex items-center justify-center animate-pulse-glow">
-            <span className="text-white font-bold text-sm" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>M</span>
-          </div>
+        <a href="#" className="flex items-center">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo-icon.png"
+            alt="MagoGo Logo"
+            className="h-10 w-auto"
+          />
           <span
-            className="font-bold text-xl tracking-tight"
+            className="ml-2.5 font-bold text-xl tracking-tight hidden sm:block"
             style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-forest)' }}
           >
             Mago<span style={{ color: 'var(--color-emerald-light)' }}>Go</span>
@@ -71,11 +74,11 @@ export default function Navbar() {
               fontFamily: 'Space Grotesk, sans-serif',
             }}
           >
-            Get Started
+            Mulai Sekarang
           </a>
         </div>
 
-        {/* Mobile menu toggle */}
+        {/* Mobile toggle */}
         <button
           className="md:hidden p-2 rounded-lg glass"
           onClick={() => setOpen(!open)}
@@ -111,7 +114,7 @@ export default function Navbar() {
                 style={{ background: 'var(--color-forest)', color: 'var(--color-lime)' }}
                 onClick={() => setOpen(false)}
               >
-                Get Started
+                Mulai Sekarang
               </a>
             </div>
           </motion.div>

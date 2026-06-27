@@ -185,6 +185,44 @@ export default function ProductShowcase() {
           ))}
         </div>
 
+        {/* Product lineup image */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative rounded-3xl overflow-hidden mb-8"
+          style={{
+            background: 'linear-gradient(135deg, #f0f8ec, #e8f5e0)',
+            border: '1px solid rgba(255,255,255,0.9)',
+            boxShadow: '0 8px 40px rgba(26,58,42,0.08)',
+          }}
+        >
+          <div className="px-6 pt-10 pb-0 text-center">
+            <span
+              className="text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4 inline-block"
+              style={{ background: 'rgba(45,122,79,0.1)', color: 'var(--color-emerald)', fontFamily: 'Space Mono, monospace' }}
+            >
+              Skalabel · Modular · Siap Deploy
+            </span>
+            <h3
+              className="text-2xl md:text-3xl font-bold mb-2"
+              style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-forest)' }}
+            >
+              Satu unit atau banyak — semua terhubung
+            </h3>
+            <p className="text-sm mb-8 max-w-md mx-auto" style={{ color: 'rgba(26,58,42,0.55)' }}>
+              MagoGo Smart Chamber dirancang untuk skala. Pantau satu unit atau seluruh armada dari satu dashboard.
+            </p>
+          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/product-lineup.png"
+            alt="MagoGo Smart Chamber lineup — 5 units"
+            className="w-full object-cover"
+            style={{ maxHeight: '380px', objectPosition: 'center center' }}
+          />
+        </motion.div>
+
         {/* Product visual banner */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

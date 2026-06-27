@@ -32,13 +32,13 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-start justify-between gap-12 mb-16">
           {/* Brand */}
           <div className="max-w-xs">
-            <div className="flex items-center gap-2.5 mb-5">
-              <div
-                className="w-9 h-9 rounded-xl flex items-center justify-center animate-pulse-glow"
-                style={{ background: 'linear-gradient(135deg, #2d7a4f, #a8ff3e)' }}
-              >
-                <span className="text-white font-bold text-sm" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>M</span>
-              </div>
+            <div className="flex items-center gap-3 mb-5">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo-icon.png"
+                alt="MagoGo Logo"
+                className="h-10 w-auto brightness-0 invert"
+              />
               <span
                 className="font-bold text-2xl tracking-tight text-white"
                 style={{ fontFamily: 'Space Grotesk, sans-serif' }}

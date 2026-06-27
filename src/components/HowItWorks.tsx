@@ -1,47 +1,47 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Trash2, Cpu, Bug, Package, RefreshCw, ArrowDown } from 'lucide-react'
+import { Trash2, Cpu, Bug, Package, RefreshCw } from 'lucide-react'
 
 const steps = [
   {
     num: '01',
     icon: Trash2,
-    title: 'Organic Waste Input',
-    description: 'Household, restaurant, or agricultural organic waste is loaded into the MagoGo Smart Chamber. Any biodegradable material works.',
-    detail: 'Food scraps · Vegetable peelings · Organic farm waste',
+    title: 'Input Sampah Organik',
+    description: 'Sampah organik dari rumah tangga, restoran, atau pertanian dimasukkan ke dalam MagoGo Smart Chamber. Semua bahan yang dapat terurai secara biologis bisa digunakan.',
+    detail: 'Sisa makanan · Kulit sayuran · Limbah pertanian organik',
     color: '#f97316',
   },
   {
     num: '02',
     icon: Cpu,
-    title: 'Smart Chamber Processing',
-    description: 'IoT sensors continuously monitor temperature, humidity, and pH. Actuators automatically maintain ideal conditions for BSF cultivation.',
-    detail: 'Real-time monitoring · Auto-regulation · Cloud logging',
+    title: 'Pemrosesan Smart Chamber',
+    description: 'Sensor IoT memantau suhu, kelembaban, dan pH secara terus-menerus. Aktuator secara otomatis menjaga kondisi ideal untuk budidaya BSF.',
+    detail: 'Pemantauan real-time · Regulasi otomatis · Pencatatan cloud',
     color: '#3b82f6',
   },
   {
     num: '03',
     icon: Bug,
-    title: 'BSF Maggot Conversion',
-    description: 'Black Soldier Fly larvae efficiently convert organic waste into protein-rich biomass — nature\'s most efficient bioconversion engine.',
-    detail: 'Up to 70% waste reduction · High protein output',
+    title: 'Konversi Maggot BSF',
+    description: 'Larva Black Soldier Fly secara efisien mengubah sampah organik menjadi biomassa kaya protein — mesin biokonversi paling efisien di alam.',
+    detail: 'Reduksi limbah hingga 70% · Output protein tinggi',
     color: '#a8ff3e',
   },
   {
     num: '04',
     icon: Package,
-    title: 'Biomass Production',
-    description: 'Harvested larvae are processed into premium biomass: high-protein animal feed, organic fertilizer, or feedstock for other industries.',
-    detail: 'Animal feed · Fertilizer · Industrial feedstock',
+    title: 'Produksi Biomassa',
+    description: 'Larva yang dipanen diolah menjadi biomassa premium: pakan hewan berprotein tinggi, pupuk organik, atau bahan baku industri lainnya.',
+    detail: 'Pakan ternak · Pupuk · Bahan baku industri',
     color: '#2d7a4f',
   },
   {
     num: '05',
     icon: RefreshCw,
-    title: 'Circular Economy',
-    description: 'Zero waste. The cycle continues — residual frass becomes fertilizer, creating a complete closed-loop system with no outputs going to landfill.',
-    detail: '100% closed loop · Carbon positive · Scalable',
+    title: 'Ekonomi Sirkular',
+    description: 'Nol limbah. Siklus terus berlanjut — sisa frass menjadi pupuk, menciptakan sistem loop tertutup lengkap tanpa output yang berakhir di TPA.',
+    detail: '100% loop tertutup · Carbon positif · Skalabel',
     color: '#3dbd6f',
   },
 ]
@@ -56,7 +56,6 @@ export default function HowItWorks() {
       <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6">
-        {/* Header */}
         <div className="text-center mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -66,7 +65,7 @@ export default function HowItWorks() {
           >
             <span className="w-2 h-2 rounded-full" style={{ background: 'var(--color-emerald-light)' }} />
             <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: 'var(--color-emerald)', fontFamily: 'Space Mono, monospace' }}>
-              The Process
+              Proses
             </span>
           </motion.div>
 
@@ -78,7 +77,7 @@ export default function HowItWorks() {
             className="text-4xl md:text-5xl font-bold mb-5"
             style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-forest)' }}
           >
-            How It Works
+            Cara Kerjanya
           </motion.h2>
 
           <motion.p
@@ -89,13 +88,11 @@ export default function HowItWorks() {
             className="text-lg max-w-lg mx-auto"
             style={{ color: 'rgba(26,58,42,0.6)' }}
           >
-            Five elegant steps from waste to value, powered by biology and IoT.
+            Lima langkah elegan dari sampah menjadi nilai, didukung biologi dan IoT.
           </motion.p>
         </div>
 
-        {/* Steps */}
         <div className="relative">
-          {/* Vertical line */}
           <div
             className="absolute left-[28px] md:left-1/2 top-8 bottom-8 w-px"
             style={{ background: 'linear-gradient(to bottom, transparent, rgba(45,122,79,0.3), transparent)', transform: 'translateX(-50%)' }}
@@ -112,7 +109,6 @@ export default function HowItWorks() {
                 i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               }`}
             >
-              {/* Step node */}
               <div
                 className="relative z-10 flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center"
                 style={{
@@ -124,7 +120,6 @@ export default function HowItWorks() {
                 <step.icon size={22} style={{ color: step.color }} />
               </div>
 
-              {/* Content card */}
               <div
                 className="flex-1 rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300"
                 style={{
@@ -140,7 +135,7 @@ export default function HowItWorks() {
                       className="text-xs font-semibold"
                       style={{ color: step.color, fontFamily: 'Space Mono, monospace' }}
                     >
-                      STEP {step.num}
+                      LANGKAH {step.num}
                     </span>
                     <h3
                       className="text-xl font-bold mt-1"
@@ -179,7 +174,6 @@ export default function HowItWorks() {
           ))}
         </div>
 
-        {/* Closing stat */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -196,11 +190,11 @@ export default function HowItWorks() {
               className="text-xs font-semibold tracking-widest uppercase"
               style={{ color: 'var(--color-lime)', fontFamily: 'Space Mono, monospace' }}
             >
-              Full Circular Loop
+              Loop Sirkular Penuh
             </span>
           </div>
           <p className="text-white/80 text-lg max-w-md mx-auto">
-            Waste in. Value out. Nothing to landfill. The MagoGo system closes the organic waste loop completely.
+            Sampah masuk. Nilai keluar. Tidak ada yang berakhir di tempat pembuangan akhir. MagoGo menutup loop sampah organik sepenuhnya.
           </p>
         </motion.div>
       </div>

@@ -176,7 +176,7 @@ export default function Pricing() {
             >
               <Zap size={12} style={{ color: 'var(--color-emerald)' }} />
               <span className="text-xs font-semibold" style={{ color: 'var(--color-emerald)', fontFamily: 'Space Mono, monospace' }}>
-                LIFETIME UPGRADE
+                LANGGANAN BULANAN
               </span>
             </div>
 
@@ -187,7 +187,7 @@ export default function Pricing() {
               Expert Upgrade
             </h3>
             <p className="text-sm mb-6" style={{ color: 'rgba(26,58,42,0.6)' }}>
-              Advanced analytics and unlimited multi-unit monitoring for serious operators.
+              Analitik canggih dan pemantauan multi-unit tak terbatas untuk operator serius.
             </p>
 
             {/* Price */}
@@ -197,9 +197,9 @@ export default function Pricing() {
                 className="text-5xl font-bold"
                 style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-forest)' }}
               >
-                500.000
+                200.000
               </span>
-              <span className="text-forest/40 text-sm mb-2">/ lifetime</span>
+              <span className="text-forest/40 text-sm mb-2">/ bulan</span>
             </div>
 
             {/* Features */}
@@ -236,11 +236,11 @@ export default function Pricing() {
           className="text-center mt-8 p-5 rounded-2xl glass"
         >
           <p className="text-sm" style={{ color: 'rgba(26,58,42,0.6)' }}>
-            Bundle both for{' '}
-            <span className="font-bold" style={{ color: 'var(--color-forest)' }}>Rp 2.300.000</span>
-            {' '}— save Rp 100.000 •{' '}
+            Beli Smart Chamber + Expert Upgrade bulan pertama hanya{' '}
+            <span className="font-bold" style={{ color: 'var(--color-forest)' }}>Rp 1.900.000</span>
+            {' '}•{' '}
             <a href="#contact" className="underline" style={{ color: 'var(--color-emerald)' }}>
-              Contact us for bulk pricing
+              Hubungi kami untuk harga volume / korporat
             </a>
           </p>
         </motion.div>
