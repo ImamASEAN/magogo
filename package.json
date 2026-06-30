@@ -13,9 +13,7 @@
     "react": "^18",
     "react-dom": "^18",
     "framer-motion": "^11.2.10",
-    "lucide-react": "^0.383.0",
-    "@lenis/react": "^1.1.0",
-    "lenis": "^1.1.13"
+    "lucide-react": "^0.383.0"
   },
   "devDependencies": {
     "typescript": "^5",
