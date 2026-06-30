@@ -192,35 +192,48 @@ export default function ProductShowcase() {
           viewport={{ once: true }}
           className="relative rounded-3xl overflow-hidden mb-8"
           style={{
-            background: 'linear-gradient(135deg, #f0f8ec, #e8f5e0)',
+            background: 'linear-gradient(155deg, #eef7f1 0%, #e3f1e8 50%, #d9ece1 100%)',
             border: '1px solid rgba(255,255,255,0.9)',
             boxShadow: '0 8px 40px rgba(5,65,42,0.08)',
           }}
         >
-          <div className="px-6 pt-10 pb-0 text-center">
+          {/* Decorative glow */}
+          <div
+            className="absolute -top-20 -right-20 w-64 h-64 rounded-full pointer-events-none opacity-30"
+            style={{ background: 'radial-gradient(circle, rgba(168,255,62,0.4), transparent 70%)' }}
+          />
+
+          <div className="relative px-6 pt-10 pb-0 text-center">
             <span
               className="text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4 inline-block"
               style={{ background: 'rgba(12,98,71,0.1)', color: 'var(--color-emerald)', fontFamily: 'Space Mono, monospace' }}
             >
-              Skalabel · Modular · Siap Deploy
+              Scalable · Modular · Deploy-Ready
             </span>
             <h3
               className="text-2xl md:text-3xl font-bold mb-2"
               style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-forest)' }}
             >
-              Satu unit atau banyak — semua terhubung
+              One unit or many — all connected
             </h3>
             <p className="text-sm mb-8 max-w-md mx-auto" style={{ color: 'rgba(5,65,42,0.55)' }}>
-              MagoGo Smart Chamber dirancang untuk skala. Pantau satu unit atau seluruh armada dari satu dashboard.
+              MagoGo Smart Chamber is built to scale. Monitor a single unit or your entire fleet from one dashboard.
             </p>
           </div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/product-lineup.png"
-            alt="MagoGo Smart Chamber lineup — 5 units"
-            className="w-full object-cover"
-            style={{ maxHeight: '380px', objectPosition: 'center center' }}
-          />
+          <div className="relative">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/product-lineup.png"
+              alt="MagoGo Smart Chamber lineup — 5 units"
+              className="w-full object-cover"
+              style={{ maxHeight: '380px', objectPosition: 'center center' }}
+            />
+            {/* Bottom fade into card */}
+            <div
+              className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
+              style={{ background: 'linear-gradient(to top, rgba(217,236,225,0.9), transparent)' }}
+            />
+          </div>
         </motion.div>
 
         {/* Product visual banner */}

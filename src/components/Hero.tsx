@@ -35,14 +35,8 @@ export default function Hero() {
 
           {/* LEFT */}
           <div>
-            {/* Logo banner */}
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-6">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo-banner.png" alt="MagoGo Smart Chamber" className="h-12 w-auto" />
-            </motion.div>
-
             {/* Badge */}
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.05 }}
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8">
               <span className="w-2 h-2 rounded-full animate-pulse-glow" style={{ background: 'var(--color-lime)' }} />
               <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: 'var(--color-emerald)', fontFamily: 'Space Mono, monospace' }}>
@@ -106,17 +100,67 @@ export default function Hero() {
 
           {/* RIGHT — product image */}
           <div className="relative flex justify-center items-center h-[500px] md:h-[600px]">
+            {/* Rotating dashed ring */}
+            <motion.div
+              className="absolute rounded-full pointer-events-none"
+              style={{
+                width: '440px', height: '440px',
+                border: '1.5px dashed rgba(12,98,71,0.18)',
+              }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
+            />
+            <motion.div
+              className="absolute rounded-full pointer-events-none"
+              style={{
+                width: '360px', height: '360px',
+                border: '1px solid rgba(168,255,62,0.2)',
+              }}
+              animate={{ rotate: -360 }}
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            />
+
+            {/* Backdrop panel behind product */}
+            <div
+              className="absolute rounded-[2.5rem] overflow-hidden"
+              style={{
+                width: '380px', height: '420px',
+                background: 'linear-gradient(155deg, rgba(5,65,42,0.08) 0%, rgba(27,91,93,0.10) 50%, rgba(168,255,62,0.06) 100%)',
+                border: '1px solid rgba(12,98,71,0.12)',
+              }}
+            >
+              {/* Scan line */}
+              <motion.div
+                className="absolute left-0 right-0 h-px"
+                style={{ background: 'linear-gradient(90deg, transparent, rgba(168,255,62,0.6), transparent)' }}
+                animate={{ top: ['8%', '92%', '8%'] }}
+                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+              />
+              {/* Corner brackets */}
+              {[
+                { top: 14, left: 14, rotate: 0 },
+                { top: 14, right: 14, rotate: 90 },
+                { bottom: 14, right: 14, rotate: 180 },
+                { bottom: 14, left: 14, rotate: 270 },
+              ].map((pos, i) => (
+                <div key={i} className="absolute w-6 h-6" style={{ ...pos, transform: `rotate(${pos.rotate}deg)` }}>
+                  <div className="absolute top-0 left-0 w-full h-[2px]" style={{ background: 'rgba(12,98,71,0.35)' }} />
+                  <div className="absolute top-0 left-0 w-[2px] h-full" style={{ background: 'rgba(12,98,71,0.35)' }} />
+                </div>
+              ))}
+            </div>
+
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.0, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="animate-float relative"
             >
               <div className="absolute inset-0 rounded-3xl blur-3xl scale-90 translate-y-8"
-                style={{ background: 'radial-gradient(ellipse, rgba(168,255,62,0.3) 0%, rgba(12,98,71,0.2) 60%, transparent 100%)' }} />
+                style={{ background: 'radial-gradient(ellipse, rgba(168,255,62,0.35) 0%, rgba(12,98,71,0.25) 60%, transparent 100%)' }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/product-single.png" alt="MagoGo Smart Chamber"
-                className="relative z-10 w-72 md:w-[420px] object-contain"
-                style={{ filter: 'drop-shadow(0 24px 48px rgba(5,65,42,0.35))' }} />
+                className="relative z-10 w-64 md:w-[360px] object-contain"
+                style={{ filter: 'drop-shadow(0 24px 48px rgba(5,65,42,0.35)) saturate(1.1) contrast(1.05)' }} />
               <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-56 h-10 rounded-full blur-2xl"
                 style={{ background: 'rgba(168,255,62,0.3)' }} />
             </motion.div>
@@ -126,7 +170,7 @@ export default function Hero() {
               <motion.div key={card.label}
                 initial={{ opacity: 0, scale: 0.7, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 + card.delay }}
-                className={`absolute glass rounded-2xl px-4 py-3 min-w-[120px] ${i % 2 === 0 ? 'animate-float' : 'animate-float-delay'} ${card.className}`}
+                className={`absolute glass rounded-2xl px-4 py-3 min-w-[120px] z-20 ${i % 2 === 0 ? 'animate-float' : 'animate-float-delay'} ${card.className}`}
                 style={{ border: '1px solid rgba(255,255,255,0.7)', boxShadow: '0 8px 32px rgba(5,65,42,0.1)' }}>
                 <div className="flex items-center gap-2 mb-1">
                   <card.icon size={13} style={{ color: card.color }} />

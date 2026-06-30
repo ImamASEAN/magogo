@@ -51,7 +51,7 @@ export default function WasteCounter() {
       className="relative py-32 overflow-hidden"
       style={{
         /* Green bleeds INTO white — dark at top, light at bottom */
-        background: 'linear-gradient(180deg, #05412A 0%, #084E31 35%, #1B5B5D 65%, #cfe6dc 90%, #F9FDFB 100%)',
+        background: 'linear-gradient(180deg, #05412A 0%, #084E31 30%, #1B5B5D 58%, #4d7d6e 78%, #aac4ba 90%, #F9FDFB 100%)',
       }}
     >
       {/* Subtle texture overlay */}
@@ -163,18 +163,20 @@ export default function WasteCounter() {
           ))}
         </div>
 
-        <motion.div
+        <motion.a
+          href="#product"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.7 }}
-          className="mt-16 inline-flex items-center gap-3 px-8 py-4 rounded-full"
+          whileHover={{ scale: 1.03 }}
+          className="mt-16 inline-flex items-center gap-3 px-8 py-4 rounded-full transition-shadow duration-300 hover:shadow-lg"
           style={{ background: 'linear-gradient(135deg, rgba(168,255,62,0.15), rgba(12,98,71,0.2))', border: '1px solid rgba(168,255,62,0.3)' }}
         >
           <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: 'var(--color-lime)' }} />
           <span className="text-white font-medium">MagoGo turns this problem into a resource.</span>
           <span style={{ color: 'var(--color-lime)' }}>→</span>
-        </motion.div>
+        </motion.a>
       </div>
     </section>
   )
