@@ -218,8 +218,23 @@ export default function Hero() {
                 style={{ background: 'linear-gradient(90deg, transparent, rgba(168,255,62,0.6), transparent)' }}
                 animate={{ top: ['8%', '92%', '8%'] }}
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }} />
-              {[{ top: 14, left: 14, rotate: 0 }, { top: 14, right: 14, rotate: 90 }, { bottom: 14, right: 14, rotate: 180 }, { bottom: 14, left: 14, rotate: 270 }].map((pos, i) => (
-                <div key={i} className="absolute w-6 h-6" style={{ ...pos, transform: `rotate(${pos.rotate}deg)` }}>
+              {[
+  { top: 14, left: 14, rotate: 0 },
+  { top: 14, right: 14, rotate: 90 },
+  { bottom: 14, right: 14, rotate: 180 },
+  { bottom: 14, left: 14, rotate: 270 }
+].map((pos, i) => (
+  <div
+    key={i}
+    className="absolute w-6 h-6"
+    style={{
+      top: pos.top,
+      left: pos.left,
+      right: pos.right,
+      bottom: pos.bottom,
+      transform: `rotate(${pos.rotate}deg)`
+    }}
+  >
                   <div className="absolute top-0 left-0 w-full h-[2px]" style={{ background: 'rgba(12,98,71,0.35)' }} />
                   <div className="absolute top-0 left-0 w-[2px] h-full" style={{ background: 'rgba(12,98,71,0.35)' }} />
                 </div>
