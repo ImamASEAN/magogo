@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Instagram, Heart, MessageCircle, ExternalLink } from 'lucide-react'
+import { Instagram as InstagramIcon, Heart, MessageCircle, ExternalLink } from 'lucide-react'
 
 const posts = [
   {
@@ -79,7 +79,7 @@ export default function Instagram() {
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6"
             >
-              <Instagram size={14} style={{ color: 'var(--color-emerald)' }} />
+              <InstagramIcon size={14} style={{ color: 'var(--color-emerald)' }} />
               <span
                 className="text-xs font-semibold tracking-widest uppercase"
                 style={{ color: 'var(--color-emerald)', fontFamily: 'Space Mono, monospace' }}
@@ -114,7 +114,7 @@ export default function Instagram() {
               fontFamily: 'Space Grotesk, sans-serif',
             }}
           >
-            <Instagram size={16} />
+            <InstagramIcon size={16} />
             @magogo.io
             <ExternalLink size={14} />
           </motion.a>
@@ -148,7 +148,7 @@ export default function Instagram() {
                   >
                     {post.tag}
                   </span>
-                  <Instagram size={14} className="text-white/40" />
+                  <InstagramIcon size={14} className="text-white/40" />
                 </div>
 
                 {/* Decorative center element */}
@@ -196,7 +196,7 @@ export default function Instagram() {
                 style={{ background: 'rgba(5,65,42,0.6)', backdropFilter: 'blur(4px)' }}
               >
                 <div className="text-center">
-                  <Instagram size={28} className="text-white mx-auto mb-2" />
+                  <InstagramIcon size={28} className="text-white mx-auto mb-2" />
                   <span className="text-white text-sm font-semibold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
                     View Post
                   </span>
@@ -227,7 +227,7 @@ export default function Instagram() {
               fontFamily: 'Space Grotesk, sans-serif',
             }}
           >
-            <Instagram size={16} style={{ color: 'var(--color-emerald)' }} />
+            <InstagramIcon size={16} style={{ color: 'var(--color-emerald)' }} />
             Follow @magogo.io on Instagram
           </a>
         </motion.div>
