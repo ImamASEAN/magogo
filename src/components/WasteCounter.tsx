@@ -151,10 +151,13 @@ export default function WasteCounter() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 + i * 0.1 }}
-              className="rounded-2xl p-6 text-left"
+              whileHover={{ y: -6, borderColor: 'rgba(168,255,62,0.35)', background: 'rgba(255,255,255,0.08)' }}
+              className="rounded-2xl p-6 text-left transition-colors duration-300"
               style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
             >
-              <stat.icon size={20} style={{ color: 'var(--color-lime)' }} className="mb-3" />
+              <motion.div whileHover={{ rotate: 12, scale: 1.1 }} className="inline-block mb-3">
+                <stat.icon size={20} style={{ color: 'var(--color-lime)' }} />
+              </motion.div>
               <div className="text-2xl font-bold text-white mb-1" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
                 {stat.value}
               </div>

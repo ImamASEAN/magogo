@@ -108,9 +108,10 @@ export default function ProductShowcase() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              whileHover={{ y: -6, transition: { duration: 0.3 } }}
-              className="group relative rounded-3xl p-8 overflow-hidden"
+              transition={{ delay: i * 0.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ y: -8, scale: 1.015, transition: { duration: 0.3 } }}
+              className="group relative rounded-3xl p-8 overflow-hidden cursor-default"
+              data-cursor
               style={{
                 background: 'rgba(255,255,255,0.7)',
                 border: '1px solid rgba(255,255,255,0.8)',
@@ -142,15 +143,16 @@ export default function ProductShowcase() {
                   >
                     {card.tag}
                   </span>
-                  <div
-                    className="w-12 h-12 rounded-2xl flex items-center justify-center"
+                  <motion.div
+                    whileHover={{ rotate: 8, scale: 1.08 }}
+                    className="w-12 h-12 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110"
                     style={{
                       background: `${card.accent}15`,
                       border: `1px solid ${card.accent}30`,
                     }}
                   >
                     <card.icon size={22} style={{ color: card.accent }} />
-                  </div>
+                  </motion.div>
                 </div>
 
                 <h3
