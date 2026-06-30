@@ -94,7 +94,7 @@ export default function ProductShowcase() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-lg max-w-xl mx-auto"
-            style={{ color: 'rgba(26,58,42,0.6)' }}
+            style={{ color: 'rgba(5,65,42,0.6)' }}
           >
             A complete closed-loop bioconversion system. Hardware meets software meets biology.
           </motion.p>
@@ -114,7 +114,7 @@ export default function ProductShowcase() {
               style={{
                 background: 'rgba(255,255,255,0.7)',
                 border: '1px solid rgba(255,255,255,0.8)',
-                boxShadow: '0 4px 40px rgba(26,58,42,0.06)',
+                boxShadow: '0 4px 40px rgba(5,65,42,0.06)',
                 backdropFilter: 'blur(20px)',
               }}
             >
@@ -160,7 +160,7 @@ export default function ProductShowcase() {
                   {card.title}
                 </h3>
 
-                <p className="text-sm leading-relaxed mb-6" style={{ color: 'rgba(26,58,42,0.6)' }}>
+                <p className="text-sm leading-relaxed mb-6" style={{ color: 'rgba(5,65,42,0.6)' }}>
                   {card.description}
                 </p>
 
@@ -174,7 +174,7 @@ export default function ProductShowcase() {
                       >
                         <feat.icon size={12} style={{ color: card.accent }} />
                       </div>
-                      <span className="text-sm" style={{ color: 'rgba(26,58,42,0.7)' }}>
+                      <span className="text-sm" style={{ color: 'rgba(5,65,42,0.7)' }}>
                         {feat.text}
                       </span>
                     </div>
@@ -194,13 +194,13 @@ export default function ProductShowcase() {
           style={{
             background: 'linear-gradient(135deg, #f0f8ec, #e8f5e0)',
             border: '1px solid rgba(255,255,255,0.9)',
-            boxShadow: '0 8px 40px rgba(26,58,42,0.08)',
+            boxShadow: '0 8px 40px rgba(5,65,42,0.08)',
           }}
         >
           <div className="px-6 pt-10 pb-0 text-center">
             <span
               className="text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4 inline-block"
-              style={{ background: 'rgba(45,122,79,0.1)', color: 'var(--color-emerald)', fontFamily: 'Space Mono, monospace' }}
+              style={{ background: 'rgba(12,98,71,0.1)', color: 'var(--color-emerald)', fontFamily: 'Space Mono, monospace' }}
             >
               Skalabel · Modular · Siap Deploy
             </span>
@@ -210,7 +210,7 @@ export default function ProductShowcase() {
             >
               Satu unit atau banyak — semua terhubung
             </h3>
-            <p className="text-sm mb-8 max-w-md mx-auto" style={{ color: 'rgba(26,58,42,0.55)' }}>
+            <p className="text-sm mb-8 max-w-md mx-auto" style={{ color: 'rgba(5,65,42,0.55)' }}>
               MagoGo Smart Chamber dirancang untuk skala. Pantau satu unit atau seluruh armada dari satu dashboard.
             </p>
           </div>
@@ -230,7 +230,7 @@ export default function ProductShowcase() {
           viewport={{ once: true }}
           className="relative rounded-3xl overflow-hidden p-10 md:p-16"
           style={{
-            background: 'linear-gradient(135deg, var(--color-forest) 0%, rgba(45,122,79,0.95) 100%)',
+            background: 'linear-gradient(135deg, var(--color-forest) 0%, var(--color-deep) 45%, var(--color-teal) 100%)',
             border: '1px solid rgba(168,255,62,0.2)',
           }}
         >

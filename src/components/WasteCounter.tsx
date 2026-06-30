@@ -51,7 +51,7 @@ export default function WasteCounter() {
       className="relative py-32 overflow-hidden"
       style={{
         /* Green bleeds INTO white — dark at top, light at bottom */
-        background: 'linear-gradient(180deg, #1a3a2a 0%, #1f4a33 60%, #2d6644 80%, #c8dfc0 92%, #f0f3ee 100%)',
+        background: 'linear-gradient(180deg, #05412A 0%, #084E31 35%, #1B5B5D 65%, #cfe6dc 90%, #F9FDFB 100%)',
       }}
     >
       {/* Subtle texture overlay */}
@@ -169,7 +169,7 @@ export default function WasteCounter() {
           viewport={{ once: true }}
           transition={{ delay: 0.7 }}
           className="mt-16 inline-flex items-center gap-3 px-8 py-4 rounded-full"
-          style={{ background: 'linear-gradient(135deg, rgba(168,255,62,0.15), rgba(45,122,79,0.2))', border: '1px solid rgba(168,255,62,0.3)' }}
+          style={{ background: 'linear-gradient(135deg, rgba(168,255,62,0.15), rgba(12,98,71,0.2))', border: '1px solid rgba(168,255,62,0.3)' }}
         >
           <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: 'var(--color-lime)' }} />
           <span className="text-white font-medium">MagoGo turns this problem into a resource.</span>

@@ -99,7 +99,7 @@ export default function DashboardDemo() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-lg max-w-lg mx-auto"
-            style={{ color: 'rgba(26,58,42,0.6)' }}
+            style={{ color: 'rgba(5,65,42,0.6)' }}
           >
             Monitor, control, and predict — from anywhere in the world.
           </motion.p>
@@ -115,7 +115,7 @@ export default function DashboardDemo() {
           style={{
             background: 'rgba(255,255,255,0.6)',
             border: '1px solid rgba(255,255,255,0.8)',
-            boxShadow: '0 20px 80px rgba(26,58,42,0.12)',
+            boxShadow: '0 20px 80px rgba(5,65,42,0.12)',
             backdropFilter: 'blur(30px)',
           }}
         >
@@ -170,7 +170,7 @@ export default function DashboardDemo() {
               <div
                 className="rounded-2xl px-6 py-4 animate-pulse-glow"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(26,58,42,0.9), rgba(45,122,79,0.8))',
+                  background: 'linear-gradient(135deg, rgba(5,65,42,0.9), rgba(12,98,71,0.8))',
                   border: '1px solid rgba(168,255,62,0.3)',
                 }}
               >
@@ -198,8 +198,8 @@ export default function DashboardDemo() {
                   className="px-5 py-2 rounded-full text-sm font-medium transition-all"
                   style={{
                     background: activeTab === tab.id ? 'var(--color-forest)' : 'transparent',
-                    color: activeTab === tab.id ? 'var(--color-lime)' : 'rgba(26,58,42,0.5)',
-                    border: activeTab === tab.id ? 'none' : '1px solid rgba(26,58,42,0.15)',
+                    color: activeTab === tab.id ? 'var(--color-lime)' : 'rgba(5,65,42,0.5)',
+                    border: activeTab === tab.id ? 'none' : '1px solid rgba(5,65,42,0.15)',
                     fontFamily: 'Space Grotesk, sans-serif',
                   }}
                 >
@@ -224,17 +224,17 @@ export default function DashboardDemo() {
                       style={{
                         background: 'rgba(255,255,255,0.8)',
                         border: '1px solid rgba(255,255,255,0.9)',
-                        boxShadow: '0 2px 12px rgba(26,58,42,0.05)',
+                        boxShadow: '0 2px 12px rgba(5,65,42,0.05)',
                       }}
                     >
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2">
                           <sensor.icon size={16} style={{ color: sensor.color }} />
-                          <span className="text-sm font-medium" style={{ color: 'rgba(26,58,42,0.6)' }}>
+                          <span className="text-sm font-medium" style={{ color: 'rgba(5,65,42,0.6)' }}>
                             {sensor.label}
                           </span>
                         </div>
-                        <div className="flex items-center gap-1 text-xs" style={{ color: 'rgba(26,58,42,0.4)', fontFamily: 'Space Mono, monospace' }}>
+                        <div className="flex items-center gap-1 text-xs" style={{ color: 'rgba(5,65,42,0.4)', fontFamily: 'Space Mono, monospace' }}>
                           <span>{sensor.min}{sensor.unit}</span>
                           <span className="mx-1">—</span>
                           <span>{sensor.max}{sensor.unit}</span>
@@ -250,7 +250,7 @@ export default function DashboardDemo() {
                       </div>
 
                       {/* Progress bar */}
-                      <div className="h-2 rounded-full overflow-hidden" style={{ background: 'rgba(26,58,42,0.08)' }}>
+                      <div className="h-2 rounded-full overflow-hidden" style={{ background: 'rgba(5,65,42,0.08)' }}>
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: `${getBarWidth(sensor)}%` }}
@@ -296,7 +296,7 @@ export default function DashboardDemo() {
                         <div className="font-semibold" style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-forest)' }}>
                           Biomass Growth Trajectory
                         </div>
-                        <div className="text-sm" style={{ color: 'rgba(26,58,42,0.5)' }}>Day 1 → Day 10 projection</div>
+                        <div className="text-sm" style={{ color: 'rgba(5,65,42,0.5)' }}>Day 1 → Day 10 projection</div>
                       </div>
                       <div className="flex items-center gap-2">
                         <TrendingUp size={16} style={{ color: 'var(--color-emerald-light)' }} />
@@ -314,7 +314,7 @@ export default function DashboardDemo() {
                       </defs>
                       {/* Grid lines */}
                       {[0, 40, 80, 120, 160].map(y => (
-                        <line key={y} x1="0" y1={y} x2="500" y2={y} stroke="rgba(26,58,42,0.06)" strokeWidth="1" />
+                        <line key={y} x1="0" y1={y} x2="500" y2={y} stroke="rgba(5,65,42,0.06)" strokeWidth="1" />
                       ))}
                       {/* Area fill */}
                       <path
@@ -338,7 +338,7 @@ export default function DashboardDemo() {
                       <circle cx="300" cy="55" r="10" fill="rgba(168,255,62,0.2)" />
                       {/* Day labels */}
                       {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((d, i) => (
-                        <text key={d} x={i * 55.5} y="175" fontSize="11" fill="rgba(26,58,42,0.4)" fontFamily="Space Mono, monospace">
+                        <text key={d} x={i * 55.5} y="175" fontSize="11" fill="rgba(5,65,42,0.4)" fontFamily="Space Mono, monospace">
                           D{d}
                         </text>
                       ))}
@@ -360,7 +360,7 @@ export default function DashboardDemo() {
                     : 'var(--color-forest)',
                   color: optimizeState === 'done' ? 'var(--color-emerald-light)' : 'var(--color-lime)',
                   fontFamily: 'Space Grotesk, sans-serif',
-                  boxShadow: '0 4px 16px rgba(26,58,42,0.2)',
+                  boxShadow: '0 4px 16px rgba(5,65,42,0.2)',
                 }}
               >
                 {optimizeState === 'running' ? (
@@ -379,7 +379,7 @@ export default function DashboardDemo() {
                 style={{
                   background: 'transparent',
                   color: 'var(--color-forest)',
-                  border: '1.5px solid rgba(45,122,79,0.3)',
+                  border: '1.5px solid rgba(12,98,71,0.3)',
                   fontFamily: 'Space Grotesk, sans-serif',
                 }}
               >
@@ -396,7 +396,7 @@ export default function DashboardDemo() {
                 style={{
                   background: 'transparent',
                   color: 'var(--color-forest)',
-                  border: '1.5px solid rgba(45,122,79,0.3)',
+                  border: '1.5px solid rgba(12,98,71,0.3)',
                   fontFamily: 'Space Grotesk, sans-serif',
                 }}
               >
@@ -413,8 +413,8 @@ export default function DashboardDemo() {
                   exit={{ opacity: 0, height: 0 }}
                   className="mt-4 rounded-xl px-5 py-4"
                   style={{
-                    background: 'rgba(26,58,42,0.06)',
-                    border: '1px solid rgba(45,122,79,0.2)',
+                    background: 'rgba(5,65,42,0.06)',
+                    border: '1px solid rgba(12,98,71,0.2)',
                     fontFamily: 'Space Mono, monospace',
                   }}
                 >

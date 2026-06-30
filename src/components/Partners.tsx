@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Leaf, Recycle, Sprout, Building2, ExternalLink } from 'lucide-react'
 
 const partners = [
-  { icon: Leaf, category: 'Environmental', title: 'Environmental Communities', description: 'Partnering with local and national environmental groups to drive adoption of circular waste management practices.', count: '12+ communities', color: '#3dbd6f' },
+  { icon: Leaf, category: 'Environmental', title: 'Environmental Communities', description: 'Partnering with local and national environmental groups to drive adoption of circular waste management practices.', count: '12+ communities', color: '#1B5B5D' },
   { icon: Recycle, category: 'Waste Management', title: 'Waste Management Partners', description: 'Collaborating with waste processing facilities to integrate BSF bioconversion at scale.', count: '8 partners', color: '#f97316' },
   { icon: Sprout, category: 'Agriculture', title: 'Agriculture Partners', description: 'Working with farms and agribusinesses to supply premium BSF-derived feed and organic fertilizer.', count: '20+ farms', color: '#a8ff3e' },
   { icon: Building2, category: 'Government', title: 'Government Collaboration', description: 'Aligned with national zero-waste roadmap initiatives and urban organic waste reduction programs.', count: '3 programs', color: '#3b82f6' },
@@ -39,7 +39,7 @@ export default function Partners() {
             Building The Future Together
           </motion.h2>
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
-            className="text-lg max-w-lg mx-auto" style={{ color: 'rgba(26,58,42,0.6)' }}>
+            className="text-lg max-w-lg mx-auto" style={{ color: 'rgba(5,65,42,0.6)' }}>
             MagoGo is building a full circular economy ecosystem across sectors.
           </motion.p>
         </div>
@@ -52,7 +52,7 @@ export default function Partners() {
               viewport={{ once: true }} transition={{ delay: i * 0.1 }}
               whileHover={{ y: -4 }}
               className="group rounded-3xl p-6 relative overflow-hidden transition-shadow duration-300"
-              style={{ background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.9)', boxShadow: '0 4px 24px rgba(26,58,42,0.06)', backdropFilter: 'blur(20px)' }}>
+              style={{ background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.9)', boxShadow: '0 4px 24px rgba(5,65,42,0.06)', backdropFilter: 'blur(20px)' }}>
               <div className="absolute top-0 left-0 right-0 h-0.5" style={{ background: `linear-gradient(90deg, ${p.color}, transparent)` }} />
               <div className="flex items-start justify-between mb-4">
                 <div className="w-12 h-12 rounded-2xl flex items-center justify-center"
@@ -66,7 +66,7 @@ export default function Partners() {
               </div>
               <div className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: p.color, fontFamily: 'Space Mono, monospace' }}>{p.category}</div>
               <h3 className="text-xl font-bold mb-3" style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-forest)' }}>{p.title}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: 'rgba(26,58,42,0.65)' }}>{p.description}</p>
+              <p className="text-sm leading-relaxed" style={{ color: 'rgba(5,65,42,0.65)' }}>{p.description}</p>
             </motion.div>
           ))}
         </div>
@@ -74,7 +74,7 @@ export default function Partners() {
         {/* ── Infinite logo marquee ── */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
           <p className="text-center text-xs font-semibold tracking-widest uppercase mb-8"
-            style={{ color: 'rgba(26,58,42,0.4)', fontFamily: 'Space Mono, monospace' }}>
+            style={{ color: 'rgba(5,65,42,0.4)', fontFamily: 'Space Mono, monospace' }}>
             Our Partners
           </p>
           {/* Track with overflow hidden */}
@@ -95,7 +95,7 @@ export default function Partners() {
                     alt={logo.name}
                     className="h-16 w-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-110"
                   />
-                  <span className="text-xs whitespace-nowrap" style={{ color: 'rgba(26,58,42,0.45)', fontFamily: 'Space Mono, monospace' }}>
+                  <span className="text-xs whitespace-nowrap" style={{ color: 'rgba(5,65,42,0.45)', fontFamily: 'Space Mono, monospace' }}>
                     {logo.name}
                   </span>
                 </div>
@@ -107,7 +107,7 @@ export default function Partners() {
         {/* CTA */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="text-center rounded-3xl p-10 relative overflow-hidden"
-          style={{ background: 'linear-gradient(135deg, var(--color-forest), rgba(45,122,79,0.9))', border: '1px solid rgba(168,255,62,0.2)' }}>
+          style={{ background: 'linear-gradient(135deg, var(--color-forest), var(--color-deep), var(--color-teal))', border: '1px solid rgba(168,255,62,0.2)' }}>
           <div className="absolute inset-0 pointer-events-none"
             style={{ background: 'radial-gradient(ellipse at center top, rgba(168,255,62,0.12), transparent 60%)' }} />
           <div className="relative z-10">

@@ -9,7 +9,7 @@ const posts = [
     caption: 'Day 3 of BSF cultivation — biomass growth looking incredible 🌱 #MagoGo #CircularEconomy',
     likes: 142,
     comments: 18,
-    bg: 'linear-gradient(135deg, #1a3a2a, #2d7a4f)',
+    bg: 'linear-gradient(135deg, #05412A, #0C6247)',
     label: 'Biomass Update',
     tag: '#Day3',
   },
@@ -27,7 +27,7 @@ const posts = [
     caption: 'From organic waste to premium animal feed — the full cycle in 10 days ✅',
     likes: 398,
     comments: 52,
-    bg: 'linear-gradient(135deg, #1e3a1a, #3dbd6f40)',
+    bg: 'linear-gradient(135deg, #1e3a1a, #1B5B5D40)',
     label: 'Harvest Day',
     tag: '#ZeroWaste',
   },
@@ -193,7 +193,7 @@ export default function Instagram() {
               {/* Hover overlay */}
               <div
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-                style={{ background: 'rgba(26,58,42,0.6)', backdropFilter: 'blur(4px)' }}
+                style={{ background: 'rgba(5,65,42,0.6)', backdropFilter: 'blur(4px)' }}
               >
                 <div className="text-center">
                   <Instagram size={28} className="text-white mx-auto mb-2" />
@@ -213,7 +213,7 @@ export default function Instagram() {
           viewport={{ once: true }}
           className="text-center mt-10"
         >
-          <p className="text-sm mb-4" style={{ color: 'rgba(26,58,42,0.5)' }}>
+          <p className="text-sm mb-4" style={{ color: 'rgba(5,65,42,0.5)' }}>
             Join thousands following our climate tech journey
           </p>
           <a
@@ -223,7 +223,7 @@ export default function Instagram() {
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 glass"
             style={{
               color: 'var(--color-forest)',
-              border: '1.5px solid rgba(45,122,79,0.25)',
+              border: '1.5px solid rgba(12,98,71,0.25)',
               fontFamily: 'Space Grotesk, sans-serif',
             }}
           >

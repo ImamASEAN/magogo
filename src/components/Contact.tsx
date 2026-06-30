@@ -42,7 +42,7 @@ export default function Contact() {
             Ready To Transform Waste?
           </motion.h2>
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
-            className="text-lg max-w-md mx-auto" style={{ color: 'rgba(26,58,42,0.6)' }}>
+            className="text-lg max-w-md mx-auto" style={{ color: 'rgba(5,65,42,0.6)' }}>
             Whether you want to order, partner, or just learn more — we'd love to hear from you.
           </motion.p>
         </div>
@@ -64,20 +64,20 @@ export default function Contact() {
                     <item.icon size={18} style={{ color: item.color }} />
                   </div>
                   <div>
-                    <div className="text-xs" style={{ color: 'rgba(26,58,42,0.45)', fontFamily: 'Space Mono, monospace' }}>{item.label}</div>
+                    <div className="text-xs" style={{ color: 'rgba(5,65,42,0.45)', fontFamily: 'Space Mono, monospace' }}>{item.label}</div>
                     <div className="font-semibold" style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-forest)' }}>{item.value}</div>
                   </div>
-                  <ArrowRight size={16} className="ml-auto" style={{ color: 'rgba(26,58,42,0.3)' }} />
+                  <ArrowRight size={16} className="ml-auto" style={{ color: 'rgba(5,65,42,0.3)' }} />
                 </motion.a>
               ))}
             </div>
             <div className="rounded-2xl p-5"
-              style={{ background: 'linear-gradient(135deg, rgba(26,58,42,0.06), rgba(45,122,79,0.06))', border: '1px solid rgba(45,122,79,0.15)' }}>
+              style={{ background: 'linear-gradient(135deg, rgba(5,65,42,0.06), rgba(12,98,71,0.06))', border: '1px solid rgba(12,98,71,0.15)' }}>
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: 'var(--color-lime)' }} />
                 <span className="text-xs font-semibold" style={{ color: 'var(--color-emerald)', fontFamily: 'Space Mono, monospace' }}>RESPONSE TIME</span>
               </div>
-              <p className="text-sm" style={{ color: 'rgba(26,58,42,0.7)' }}>
+              <p className="text-sm" style={{ color: 'rgba(5,65,42,0.7)' }}>
                 We typically respond within <strong style={{ color: 'var(--color-forest)' }}>24 hours</strong>. For urgent inquiries, reach us on Instagram.
               </p>
             </div>
@@ -85,7 +85,7 @@ export default function Contact() {
 
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             className="rounded-3xl p-8"
-            style={{ background: 'rgba(255,255,255,0.75)', border: '1px solid rgba(255,255,255,0.9)', boxShadow: '0 8px 40px rgba(26,58,42,0.08)', backdropFilter: 'blur(20px)' }}>
+            style={{ background: 'rgba(255,255,255,0.75)', border: '1px solid rgba(255,255,255,0.9)', boxShadow: '0 8px 40px rgba(5,65,42,0.08)', backdropFilter: 'blur(20px)' }}>
             {state === 'sent' ? (
               <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-8">
                 <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5"
@@ -93,7 +93,7 @@ export default function Contact() {
                   <CheckCircle size={28} style={{ color: 'var(--color-emerald-light)' }} />
                 </div>
                 <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-forest)' }}>Message sent!</h3>
-                <p className="text-sm" style={{ color: 'rgba(26,58,42,0.6)' }}>We'll be in touch within 24 hours.</p>
+                <p className="text-sm" style={{ color: 'rgba(5,65,42,0.6)' }}>We'll be in touch within 24 hours.</p>
               </motion.div>
             ) : (
               <>
@@ -104,30 +104,30 @@ export default function Contact() {
                     { key: 'email', label: 'EMAIL ADDRESS', placeholder: 'you@example.com', type: 'email' },
                   ].map(field => (
                     <div key={field.key}>
-                      <label className="block text-xs font-medium mb-1.5" style={{ color: 'rgba(26,58,42,0.5)', fontFamily: 'Space Mono, monospace' }}>{field.label}</label>
+                      <label className="block text-xs font-medium mb-1.5" style={{ color: 'rgba(5,65,42,0.5)', fontFamily: 'Space Mono, monospace' }}>{field.label}</label>
                       <input type={field.type} value={form[field.key as 'name'|'email']}
                         onChange={e => setForm(f => ({ ...f, [field.key]: e.target.value }))}
                         placeholder={field.placeholder}
                         className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200"
-                        style={{ background: 'rgba(26,58,42,0.04)', border: '1px solid rgba(26,58,42,0.12)', color: 'var(--color-forest)' }}
+                        style={{ background: 'rgba(5,65,42,0.04)', border: '1px solid rgba(5,65,42,0.12)', color: 'var(--color-forest)' }}
                         onFocus={e => e.target.style.borderColor = 'var(--color-emerald-light)'}
-                        onBlur={e => e.target.style.borderColor = 'rgba(26,58,42,0.12)'}
+                        onBlur={e => e.target.style.borderColor = 'rgba(5,65,42,0.12)'}
                       />
                     </div>
                   ))}
                   <div>
-                    <label className="block text-xs font-medium mb-1.5" style={{ color: 'rgba(26,58,42,0.5)', fontFamily: 'Space Mono, monospace' }}>MESSAGE</label>
+                    <label className="block text-xs font-medium mb-1.5" style={{ color: 'rgba(5,65,42,0.5)', fontFamily: 'Space Mono, monospace' }}>MESSAGE</label>
                     <textarea value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
                       placeholder="Tell us about your interest in MagoGo..." rows={4}
                       className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200 resize-none"
-                      style={{ background: 'rgba(26,58,42,0.04)', border: '1px solid rgba(26,58,42,0.12)', color: 'var(--color-forest)' }}
+                      style={{ background: 'rgba(5,65,42,0.04)', border: '1px solid rgba(5,65,42,0.12)', color: 'var(--color-forest)' }}
                       onFocus={e => e.target.style.borderColor = 'var(--color-emerald-light)'}
-                      onBlur={e => e.target.style.borderColor = 'rgba(26,58,42,0.12)'}
+                      onBlur={e => e.target.style.borderColor = 'rgba(5,65,42,0.12)'}
                     />
                   </div>
                   <button onClick={handleSubmit} disabled={state === 'sending'}
                     className="w-full flex items-center justify-center gap-2 py-4 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-[1.02] disabled:scale-100 disabled:opacity-70"
-                    style={{ background: 'var(--color-forest)', color: 'var(--color-lime)', fontFamily: 'Space Grotesk, sans-serif', boxShadow: '0 4px 20px rgba(26,58,42,0.2)' }}>
+                    style={{ background: 'var(--color-forest)', color: 'var(--color-lime)', fontFamily: 'Space Grotesk, sans-serif', boxShadow: '0 4px 20px rgba(5,65,42,0.2)' }}>
                     {state === 'sending' ? (
                       <><div className="w-4 h-4 rounded-full border-2 border-lime-400/40 border-t-lime-400 animate-spin" />Sending...</>
                     ) : (

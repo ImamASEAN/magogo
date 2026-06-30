@@ -68,7 +68,7 @@ export default function Pricing() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-lg max-w-md mx-auto"
-            style={{ color: 'rgba(26,58,42,0.6)' }}
+            style={{ color: 'rgba(5,65,42,0.6)' }}
           >
             Start transforming waste with the Smart Chamber. Upgrade anytime.
           </motion.p>
@@ -82,9 +82,9 @@ export default function Pricing() {
             viewport={{ once: true }}
             className="relative rounded-3xl overflow-hidden"
             style={{
-              background: 'linear-gradient(145deg, var(--color-forest), rgba(26,58,42,0.95))',
+              background: 'linear-gradient(145deg, var(--color-forest), var(--color-deep))',
               border: '1px solid rgba(168,255,62,0.25)',
-              boxShadow: '0 20px 60px rgba(26,58,42,0.25)',
+              boxShadow: '0 20px 60px rgba(5,65,42,0.25)',
             }}
           >
             {/* Glow */}
@@ -162,7 +162,7 @@ export default function Pricing() {
             style={{
               background: 'rgba(255,255,255,0.7)',
               border: '1px solid rgba(255,255,255,0.9)',
-              boxShadow: '0 8px 40px rgba(26,58,42,0.07)',
+              boxShadow: '0 8px 40px rgba(5,65,42,0.07)',
               backdropFilter: 'blur(20px)',
             }}
           >
@@ -170,8 +170,8 @@ export default function Pricing() {
             <div
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6"
               style={{
-                background: 'rgba(45,122,79,0.1)',
-                border: '1px solid rgba(45,122,79,0.2)',
+                background: 'rgba(12,98,71,0.1)',
+                border: '1px solid rgba(12,98,71,0.2)',
               }}
             >
               <Zap size={12} style={{ color: 'var(--color-emerald)' }} />
@@ -186,7 +186,7 @@ export default function Pricing() {
             >
               Expert Upgrade
             </h3>
-            <p className="text-sm mb-6" style={{ color: 'rgba(26,58,42,0.6)' }}>
+            <p className="text-sm mb-6" style={{ color: 'rgba(5,65,42,0.6)' }}>
               Advanced analytics and unlimited multi-unit monitoring for serious operators.
             </p>
 
@@ -207,7 +207,7 @@ export default function Pricing() {
               {upgrade.map(item => (
                 <div key={item} className="flex items-start gap-3">
                   <CheckCircle2 size={15} style={{ color: 'var(--color-emerald-light)', flexShrink: 0, marginTop: 1 }} />
-                  <span className="text-sm" style={{ color: 'rgba(26,58,42,0.7)' }}>{item}</span>
+                  <span className="text-sm" style={{ color: 'rgba(5,65,42,0.7)' }}>{item}</span>
                 </div>
               ))}
             </div>
@@ -218,7 +218,7 @@ export default function Pricing() {
               style={{
                 background: 'transparent',
                 color: 'var(--color-forest)',
-                border: '1.5px solid rgba(26,58,42,0.2)',
+                border: '1.5px solid rgba(5,65,42,0.2)',
                 fontFamily: 'Space Grotesk, sans-serif',
               }}
             >
@@ -235,7 +235,7 @@ export default function Pricing() {
           viewport={{ once: true }}
           className="text-center mt-8 p-5 rounded-2xl glass"
         >
-          <p className="text-sm" style={{ color: 'rgba(26,58,42,0.6)' }}>
+          <p className="text-sm" style={{ color: 'rgba(5,65,42,0.6)' }}>
             Beli Smart Chamber + Expert Upgrade month pertama hanya{' '}
             <span className="font-bold" style={{ color: 'var(--color-forest)' }}>Rp 1.900.000</span>
             {' '}•{' '}
