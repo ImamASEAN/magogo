@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const links = [
-  { label: 'Technology', href: '#product' },
+  { label: 'Beranda', href: '#home' },
+  { label: 'Fitur', href: '#product' },
   { label: 'Dashboard', href: '#dashboard' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Harga', href: '#pricing' },
+  { label: 'Kontak', href: '#contact' },
 ]
 
 export default function Navbar() {
@@ -17,7 +17,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    const onScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -27,94 +27,61 @@ export default function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'py-3 glass border-b border-white/40 shadow-md'
-          : 'py-5 bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+      style={{
+        background: scrolled ? 'rgba(5,30,16,0.92)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(20px)' : 'none',
+        borderBottom: scrolled ? '1px solid rgba(59,224,138,0.1)' : 'none',
+        padding: scrolled ? '12px 0' : '20px 0',
+      }}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex items-center gap-2.5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/logo-icon.png"
-            alt="MagoGo Logo"
-            className="h-10 w-auto"
-          />
-          <span
-            className="ml-2.5 font-bold text-xl tracking-tight hidden sm:block"
-            style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-forest)' }}
-          >
-            Mago<span style={{ color: 'var(--color-emerald-light)' }}>Go</span>
+          <img src="/logo-icon.png" alt="MagoGo" className="h-9 w-auto brightness-0 invert" />
+          <span className="font-bold text-xl text-white tracking-tight" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+            Mago<span style={{ color: 'var(--color-lime)' }}>Go</span>
           </span>
         </a>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {links.map(l => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="nav-link text-sm font-medium text-forest/70 hover:text-forest transition-colors"
-            >
+            <a key={l.href} href={l.href}
+              className="nav-link text-sm font-medium transition-colors"
+              style={{ color: 'rgba(255,255,255,0.75)' }}>
               {l.label}
             </a>
           ))}
         </nav>
 
-        {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="#contact"
-            className="px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105"
-            style={{
-              background: 'var(--color-forest)',
-              color: 'var(--color-lime)',
-              fontFamily: 'Space Grotesk, sans-serif',
-            }}
-          >
-            Get Started
+        <div className="hidden md:block">
+          <a href="#contact"
+            className="px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 hover:brightness-110"
+            style={{ background: 'var(--color-lime)', color: 'var(--color-forest)', fontFamily: 'Space Grotesk, sans-serif', boxShadow: '0 4px 16px rgba(59,224,138,0.3)' }}>
+            Beli Sekarang
           </a>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          className="md:hidden p-2 rounded-lg glass"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
+        <button className="md:hidden p-2 rounded-lg" style={{ border: '1px solid rgba(255,255,255,0.15)' }}
+          onClick={() => setOpen(!open)}>
+          {open ? <X size={20} className="text-white" /> : <Menu size={20} className="text-white" />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-white/40"
-          >
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }}
+            style={{ background: 'rgba(5,30,16,0.98)', borderTop: '1px solid rgba(59,224,138,0.1)' }}>
             <div className="px-6 py-4 flex flex-col gap-4">
               {links.map(l => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  className="text-forest/80 font-medium py-2 border-b border-forest/10"
-                  onClick={() => setOpen(false)}
-                >
+                <a key={l.href} href={l.href} className="text-white/75 font-medium py-2 border-b border-white/5" onClick={() => setOpen(false)}>
                   {l.label}
                 </a>
               ))}
-              <a
-                href="#contact"
-                className="mt-2 px-5 py-3 rounded-full text-sm font-semibold text-center"
-                style={{ background: 'var(--color-forest)', color: 'var(--color-lime)' }}
-                onClick={() => setOpen(false)}
-              >
-                Get Started
+              <a href="#contact" className="mt-2 py-3 rounded-full text-sm font-semibold text-center"
+                style={{ background: 'var(--color-lime)', color: 'var(--color-forest)' }}
+                onClick={() => setOpen(false)}>
+                Beli Sekarang
               </a>
             </div>
           </motion.div>

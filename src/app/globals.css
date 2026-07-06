@@ -9,18 +9,23 @@
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'Space Mono', monospace;
 
-  /* New palette */
-  --color-bg:        #F9FDFB;       /* off-white */
-  --color-forest:    #05412A;       /* darkest green — primary text, backgrounds */
-  --color-deep:      #084E31;       /* dark green */
-  --color-teal:      #1B5B5D;       /* teal-green mid */
-  --color-emerald:   #0C6247;       /* medium green */
-  --color-emerald-light: #1a8a62;   /* lighter variant for hover/glow */
-  --color-lime:      #a8ff3e;       /* accent glow (kept for contrast) */
+  /* Palette — dark forest hero, teal accent */
+  --color-bg:            #F5F7F5;
+  --color-bg-dark:       #0a1f14;
+  --color-forest:        #05412A;
+  --color-deep:          #0a2d1c;
+  --color-teal:          #1B5B5D;
+  --color-emerald:       #0C6247;
+  --color-emerald-light: #1eab6e;
+  --color-lime:          #3be08a;
+  --color-lime-bright:   #a8ff3e;
 
-  --glass-bg: rgba(249,253,251,0.6);
-  --glass-border: rgba(255,255,255,0.65);
-  --glass-shadow: 0 8px 32px rgba(5,65,42,0.10);
+  --glass-bg:     rgba(255,255,255,0.08);
+  --glass-border: rgba(255,255,255,0.12);
+  --glass-shadow: 0 8px 32px rgba(0,0,0,0.25);
+
+  --card-dark-bg:     rgba(10,45,28,0.7);
+  --card-dark-border: rgba(255,255,255,0.08);
 }
 
 * { box-sizing: border-box; padding: 0; margin: 0; }
@@ -32,17 +37,15 @@ body {
   color: var(--color-forest);
   overflow-x: hidden;
   cursor: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
 }
 
 *, *::before, *::after { cursor: none !important; }
 
-/* Custom cursor */
 .cursor-dot {
   position: fixed; top: 0; left: 0;
   width: 10px; height: 10px; border-radius: 50%;
   background: var(--color-lime);
-  box-shadow: 0 0 12px var(--color-lime), 0 0 24px rgba(168,255,62,0.5);
+  box-shadow: 0 0 12px var(--color-lime), 0 0 24px rgba(59,224,138,0.4);
   pointer-events: none; z-index: 99999;
   transform: translate(-50%, -50%);
   transition: width 0.2s, height 0.2s;
@@ -50,31 +53,45 @@ body {
 .cursor-ring {
   position: fixed; top: 0; left: 0;
   width: 36px; height: 36px; border-radius: 50%;
-  border: 1.5px solid rgba(168,255,62,0.6);
+  border: 1.5px solid rgba(59,224,138,0.5);
   backdrop-filter: blur(4px);
   pointer-events: none; z-index: 99998;
   transform: translate(-50%, -50%);
-  transition: width 0.3s cubic-bezier(0.16,1,0.3,1), height 0.3s cubic-bezier(0.16,1,0.3,1), opacity 0.2s;
+  transition: width 0.3s cubic-bezier(0.16,1,0.3,1), height 0.3s cubic-bezier(0.16,1,0.3,1);
 }
-.cursor-ring.hovered { width: 56px; height: 56px; background: rgba(168,255,62,0.08); border-color: var(--color-lime); }
+.cursor-ring.hovered { width: 56px; height: 56px; background: rgba(59,224,138,0.06); border-color: var(--color-lime); }
 
-/* Glass */
+/* Glass — two flavours */
 .glass {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.65);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: var(--glass-shadow);
+  box-shadow: 0 4px 24px rgba(5,65,42,0.08);
+}
+.glass-dark {
+  background: var(--card-dark-bg);
+  border: 1px solid var(--card-dark-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.3);
 }
 
 .section-pad { padding: 120px 0; }
 
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--color-bg); }
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--color-bg-dark); }
 ::-webkit-scrollbar-thumb { background: var(--color-emerald); border-radius: 3px; }
 
-/* Grid pattern using new palette */
+/* Grid — lighter on dark bg */
 .bg-grid-pattern {
+  background-image:
+    linear-gradient(rgba(59,224,138,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,224,138,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.bg-grid-light {
   background-image:
     linear-gradient(rgba(12,98,71,0.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(12,98,71,0.07) 1px, transparent 1px);
@@ -91,29 +108,30 @@ body {
 .animation-delay-2000 { animation-delay: 2s; }
 .animation-delay-4000 { animation-delay: 4s; }
 
-@keyframes floatY {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
-}
+@keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 .animate-float        { animation: floatY 5s ease-in-out infinite; }
 .animate-float-delay  { animation: floatY 5s ease-in-out 1.5s infinite; }
 .animate-float-delay2 { animation: floatY 5s ease-in-out 3s infinite; }
 
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 20px rgba(168,255,62,0.3), 0 0 40px rgba(168,255,62,0.1); }
-  50%       { box-shadow: 0 0 40px rgba(168,255,62,0.6), 0 0 80px rgba(168,255,62,0.2); }
+  0%, 100% { box-shadow: 0 0 16px rgba(59,224,138,0.3), 0 0 32px rgba(59,224,138,0.1); }
+  50%       { box-shadow: 0 0 32px rgba(59,224,138,0.6), 0 0 64px rgba(59,224,138,0.2); }
 }
 .animate-pulse-glow { animation: pulseGlow 3s ease-in-out infinite; }
 
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 .animate-blink { animation: blink 1s step-end infinite; }
 
-@keyframes marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 .animate-marquee { animation: marquee 20s linear infinite; display: flex; width: max-content; }
 .animate-marquee:hover { animation-play-state: paused; }
+
+/* Live dot pulse */
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(1.3); }
+}
+.animate-live { animation: livePulse 1.5s ease-in-out infinite; }
 
 .nav-link { position: relative; }
 .nav-link::after {
