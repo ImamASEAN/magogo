@@ -97,7 +97,7 @@ export default function Pricing() {
             </p>
             <div className="flex items-end gap-2 mb-8">
               <span className="text-xl font-medium" style={{ color: 'rgba(5,65,42,0.4)' }}>Rp</span>
-              <span className="text-5xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-forest)' }}>200.000</span>
+              <span className="text-5xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-forest)' }}>149.000</span>
               <span className="text-sm mb-2" style={{ color: 'rgba(5,65,42,0.4)' }}>/ bulan</span>
             </div>
             <div className="space-y-3 mb-8">
@@ -122,7 +122,7 @@ export default function Pricing() {
           style={{ background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(5,65,42,0.08)', backdropFilter: 'blur(20px)' }}>
           <p className="text-sm" style={{ color: 'rgba(5,65,42,0.55)' }}>
             Bundel Smart Chamber + bulan pertama Expert Upgrade hanya{' '}
-            <span className="font-bold" style={{ color: 'var(--color-forest)' }}>Rp 1.900.000</span>
+            <span className="font-bold" style={{ color: 'var(--color-forest)' }}>Rp 1.849.000</span>
             {' '}·{' '}
             <a href="#contact" className="underline" style={{ color: 'var(--color-emerald)' }}>Hubungi kami untuk harga korporat</a>
           </p>
