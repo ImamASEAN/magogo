@@ -9,16 +9,14 @@ const included = [
   'Analitik & laporan dasar',
   'Sensor suhu, kelembapan, pH, biomassa',
   'Kontrol lingkungan otomatis',
-  'Pencatatan data cloud (1 tahun)',
-  'Panduan pemasangan & dokumentasi',
-  'Dukungan via email',
+  'Akses MagoGo-Network',
+  'Garansi 1 tahun',
 ]
 
 const upgrade = [
   'Prediksi pertumbuhan ML tingkat lanjut',
   'Pemantauan multi-unit (tak terbatas)',
   'Dukungan pelanggan prioritas',
-  'Akses API untuk integrasi kustom',
   'Analitik historis & ekspor data',
   'Akses awal ke fitur terbaru',
 ]
@@ -45,36 +43,38 @@ export default function Pricing() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
           {/* Main product — dark card */}
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             whileHover={{ y: -4 }}
-            className="relative rounded-3xl overflow-hidden"
+            className="relative rounded-3xl overflow-hidden flex flex-col h-full"
             style={{ background: 'linear-gradient(145deg, var(--color-forest), var(--color-deep))', border: '1px solid rgba(59,224,138,0.2)', boxShadow: '0 20px 60px rgba(5,65,42,0.25)' }}>
             <div className="absolute top-0 right-0 w-64 h-64 rounded-full pointer-events-none"
               style={{ background: 'radial-gradient(circle, rgba(59,224,138,0.12) 0%, transparent 70%)' }} />
-            <div className="relative z-10 p-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6"
-                style={{ background: 'rgba(59,224,138,0.12)', border: '1px solid rgba(59,224,138,0.25)' }}>
-                <Star size={12} style={{ color: 'var(--color-lime)' }} />
-                <span className="text-xs font-semibold" style={{ color: 'var(--color-lime)', fontFamily: 'Space Mono, monospace' }}>PRODUK UTAMA</span>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>MagoGo Smart Chamber</h3>
-              <p className="text-white/45 text-sm mb-8">Sistem hardware + software lengkap untuk mulai budidaya seketika.</p>
-              <div className="flex items-end gap-2 mb-8">
-                <span className="text-white/45 text-xl font-medium">Rp</span>
-                <span className="text-5xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-lime)' }}>1.800.000</span>
-              </div>
-              <div className="space-y-3 mb-8">
-                {included.map(item => (
-                  <div key={item} className="flex items-start gap-3">
-                    <CheckCircle2 size={15} style={{ color: 'var(--color-lime)', flexShrink: 0, marginTop: 1 }} />
-                    <span className="text-sm text-white/65">{item}</span>
-                  </div>
-                ))}
+            <div className="relative z-10 p-8 flex flex-col justify-between flex-1">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6"
+                  style={{ background: 'rgba(59,224,138,0.12)', border: '1px solid rgba(59,224,138,0.25)' }}>
+                  <Star size={12} style={{ color: 'var(--color-lime)' }} />
+                  <span className="text-xs font-semibold" style={{ color: 'var(--color-lime)', fontFamily: 'Space Mono, monospace' }}>PRODUK UTAMA</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>MagoGo Smart Chamber</h3>
+                <p className="text-white/45 text-sm mb-8 min-h-[40px]">Sistem hardware + software lengkap untuk mulai budidaya seketika.</p>
+                <div className="flex items-end gap-2 mb-8">
+                  <span className="text-white/45 text-xl font-medium">Rp</span>
+                  <span className="text-5xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-lime)' }}>1.800.000</span>
+                </div>
+                <div className="space-y-3 mb-8">
+                  {included.map(item => (
+                    <div key={item} className="flex items-start gap-3">
+                      <CheckCircle2 size={15} style={{ color: 'var(--color-lime)', flexShrink: 0, marginTop: 1 }} />
+                      <span className="text-sm text-white/65">{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
               <a href="#contact"
-                className="group w-full flex items-center justify-center gap-2 py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-[1.02]"
+                className="group w-full flex items-center justify-center gap-2 py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-[1.02] mt-auto"
                 style={{ background: 'var(--color-lime)', color: 'var(--color-forest)', fontFamily: 'Space Grotesk, sans-serif', boxShadow: '0 4px 24px rgba(59,224,138,0.3)' }}>
                 Pesan Sekarang <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </a>
@@ -84,32 +84,34 @@ export default function Pricing() {
           {/* Upgrade card — light */}
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}
             whileHover={{ y: -4 }}
-            className="rounded-3xl p-8"
+            className="rounded-3xl p-8 flex flex-col justify-between h-full"
             style={{ background: 'rgba(255,255,255,0.85)', border: '1.5px solid rgba(5,65,42,0.1)', boxShadow: '0 8px 40px rgba(5,65,42,0.07)', backdropFilter: 'blur(20px)' }}>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6"
-              style={{ background: 'rgba(12,98,71,0.1)', border: '1px solid rgba(12,98,71,0.15)' }}>
-              <Zap size={12} style={{ color: 'var(--color-emerald)' }} />
-              <span className="text-xs font-semibold" style={{ color: 'var(--color-emerald)', fontFamily: 'Space Mono, monospace' }}>LANGGANAN BULANAN</span>
-            </div>
-            <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-forest)' }}>Expert Upgrade</h3>
-            <p className="text-sm mb-6" style={{ color: 'rgba(5,65,42,0.55)' }}>
-              Analitik canggih dan pemantauan multi-unit tak terbatas untuk operator serius.
-            </p>
-            <div className="flex items-end gap-2 mb-8">
-              <span className="text-xl font-medium" style={{ color: 'rgba(5,65,42,0.4)' }}>Rp</span>
-              <span className="text-5xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-forest)' }}>149.000</span>
-              <span className="text-sm mb-2" style={{ color: 'rgba(5,65,42,0.4)' }}>/ bulan</span>
-            </div>
-            <div className="space-y-3 mb-8">
-              {upgrade.map(item => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle2 size={15} style={{ color: 'var(--color-emerald-light)', flexShrink: 0, marginTop: 1 }} />
-                  <span className="text-sm" style={{ color: 'rgba(5,65,42,0.7)' }}>{item}</span>
-                </div>
-              ))}
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6"
+                style={{ background: 'rgba(12,98,71,0.1)', border: '1px solid rgba(12,98,71,0.15)' }}>
+                <Zap size={12} style={{ color: 'var(--color-emerald)' }} />
+                <span className="text-xs font-semibold" style={{ color: 'var(--color-emerald)', fontFamily: 'Space Mono, monospace' }}>LANGGANAN BULANAN</span>
+              </div>
+              <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-forest)' }}>Expert Upgrade</h3>
+              <p className="text-sm mb-6 min-h-[40px]" style={{ color: 'rgba(5,65,42,0.55)' }}>
+                Analitik canggih dan pemantauan multi-unit tak terbatas untuk operator serius.
+              </p>
+              <div className="flex items-end gap-2 mb-8">
+                <span className="text-xl font-medium" style={{ color: 'rgba(5,65,42,0.4)' }}>Rp</span>
+                <span className="text-5xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif', color: 'var(--color-forest)' }}>149.000</span>
+                <span className="text-sm mb-2" style={{ color: 'rgba(5,65,42,0.4)' }}>/ bulan</span>
+              </div>
+              <div className="space-y-3 mb-8">
+                {upgrade.map(item => (
+                  <div key={item} className="flex items-start gap-3">
+                    <CheckCircle2 size={15} style={{ color: 'var(--color-emerald-light)', flexShrink: 0, marginTop: 1 }} />
+                    <span className="text-sm" style={{ color: 'rgba(5,65,42,0.7)' }}>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
             <a href="#contact"
-              className="group w-full flex items-center justify-center gap-2 py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-[1.02]"
+              className="group w-full flex items-center justify-center gap-2 py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-[1.02] mt-auto"
               style={{ background: 'transparent', color: 'var(--color-forest)', border: '1.5px solid rgba(5,65,42,0.2)', fontFamily: 'Space Grotesk, sans-serif' }}>
               Tambah Expert Upgrade <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </a>
